@@ -1,8 +1,9 @@
 # 2 MESH系统架构
 这一章节，主要提供了对mesh网络操作和分层的系统架构的概述。
 ## 2.1分层的架构
-mesh文档规范被定义为一个分层的架构如图2.1所示：
-![]()
+mesh文档规范被定义为一个分层的架构如图2.1所示。
+
+![](https://github.com/fridyss/ble-mesh-note/blob/master/material/mesh%20system%20arhitecture.png)
 
 *图2.1 mesh 系统架构
 ### 2.1.1 模型层

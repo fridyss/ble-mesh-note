@@ -1,11 +1,211 @@
-1. [约定](https://github.com/fridyss/ble-mesh-note/blob/master/3_Mesh%E7%BD%91%E7%BB%9C/3_1%20%E7%BA%A6%E5%AE%9A.md)
-2. [特性](https://github.com/fridyss/ble-mesh-note/blob/master/3_Mesh%E7%BD%91%E7%BB%9C/3_2%20%E7%89%B9%E6%80%A7.md)
-3. [承载](https://github.com/fridyss/ble-mesh-note/blob/master/3_Mesh%E7%BD%91%E7%BB%9C/3_3%20%E6%89%BF%E8%BD%BD.md)
-4. [网络层](https://github.com/fridyss/ble-mesh-note/blob/master/3_Mesh%E7%BD%91%E7%BB%9C/3_4%20%E7%BD%91%E7%BB%9C%E5%B1%82.md)
-5. [下层传输层](https://github.com/fridyss/ble-mesh-note/blob/master/3_Mesh%E7%BD%91%E7%BB%9C/3_5%20%E4%B8%8B%E5%B1%82%E4%BC%A0%E8%BE%93%E5%B1%82.md)
-6. [上层传输层](https://github.com/fridyss/ble-mesh-note/blob/master/3_Mesh%E7%BD%91%E7%BB%9C/3_6%20%E4%B8%8A%E5%B1%82%E4%BC%A0%E8%BE%93%E5%B1%82.md)
-7. [访问层]()
-8. [Mesh安全]()
-9. [Mesh Beacon]()
-10. [Mesh网络管理]()
-11. [消息处理流]()
+3 MESH网络
+	* 3.1 [约定](https://github.com/fridyss/ble-mesh-note/blob/master/3_Mesh%E7%BD%91%E7%BB%9C/3_1%20%E7%BA%A6%E5%AE%9A.md)
+		* 3.1.1 字节顺序和字段组合
+			* 3.1.1.1 大端
+			* 3.1.2.2 小端
+
+
+	* 3.2 [特性](https://github.com/fridyss/ble-mesh-note/blob/master/3_Mesh%E7%BD%91%E7%BB%9C/3_2%20%E7%89%B9%E6%80%A7.md)
+	* 3.3 [承载](https://github.com/fridyss/ble-mesh-note/blob/master/3_Mesh%E7%BD%91%E7%BB%9C/3_3%20%E6%89%BF%E8%BD%BD.md)
+		* 3.3.1 广播承载
+		* 3.3.2 GATT承载
+
+	* 3.4[网络层](https://github.com/fridyss/ble-mesh-note/blob/master/3_Mesh%E7%BD%91%E7%BB%9C/3_4%20%E7%BD%91%E7%BB%9C%E5%B1%82.md)
+		* 3.4.1 字节顺序
+			* 3.4.2 地址
+			* 3.4.2.1 未分配地址
+			* 3.4.2.2 单播地址
+			* 3.4.2.3 虚拟地址
+			* 3.4.2.4 组地址
+
+		* 3.4.3 地址有效性
+		* 3.4.4 网络PDU
+			* 3.4.4.1 IVI
+			* 3.4.4.2 NID
+			* 3.4.4.3 CTL
+			* 3.4.4.4 TTL
+			* 3.4.4.5 SEQ
+			* 3.4.4.6 SRC
+			* 3.4.4.7 DST
+			* 3.4.4.8 TransportPDU
+			* 3.4.4.9 NetMIC
+
+		* 3.4.5 网络接口
+			* 3.4.5.1 输入过滤接口
+			* 3.4.5.2 输出过滤接口
+			* 3.4.5.3 本地网络接口
+			* 3.4.5.4 广播承载网络接口
+
+		* 3.4.6 网络层行为
+			* 3.4.6.1 中继特性
+			* 3.4.6.2 代理特性
+			* 3.4.6.3 接收一个网络PDU
+			* 3.4.6.4 发送一个网络PDU
+			* 3.4.6.5 网络消息缓存
+
+
+	* 3.5 [下层传输层](https://github.com/fridyss/ble-mesh-note/blob/master/3_Mesh%E7%BD%91%E7%BB%9C/3_5%20%E4%B8%8B%E5%B1%82%E4%BC%A0%E8%BE%93%E5%B1%82.md)
+		* 3.5.1 字节顺序
+		* 3.5.2 下层传输PDU
+			* 3.5.2.1 未分段访问消息
+			* 3.5.2.2 分段访问消息
+			* 3.5.2.3 未分段控制消息
+				* 3.5.2.3.1 段确认消息
+
+			* 3.5.2.4 分段控制消息
+
+		* 3.5.3 分段和重组
+			* 3.5.3.1 分段
+			* 3.5.3.2 重组
+			* 3.5.3.3 分段行为
+			* 3.5.3.4 重组行为
+			* 3.5.3.5 低动耗特性重组行为
+
+		* 3.5.4 下层传输层行为
+			* 3.5.4.1 发送一个下层传输PDU
+			* 3.5.4.2 接收一个下层传输PDU
+
+		* 3.5.5 友元队列
+
+	* 3.6 [上层传输层](https://github.com/fridyss/ble-mesh-note/blob/master/3_Mesh%E7%BD%91%E7%BB%9C/3_6%20%E4%B8%8A%E5%B1%82%E4%BC%A0%E8%BE%93%E5%B1%82.md)
+		* 3.6.1 字节顺序
+		* 3.6.2 上层传输访问PDU
+			* 3.6.2.1 加密访问负载
+			* 3.6.2.2 TransMIC
+
+		* 3.6.3 上层传输控制PDU
+		* 3.6.4 上层传输层行为
+			* 3.6.4.1 发送一个访问负载
+			* 3.6.4.2 接收一个上层传输PDU
+
+		* 3.6.5 传输控制消息
+			* 3.6.5.1 Friend Poll
+			* 3.6.5.2 Friend Update
+			* 3.6.5.3 Friend Request
+			* 3.6.5.4 Friend Offer
+			* 3.6.5.5 Friend Clear
+			* 3.6.5.6 Friend Clear Comfirm
+			* 3.6.5.7 Friend Subscription List Add
+			* 3.6.5.8 Friend Subscription List Remove
+			* 3.6.5.9 Friend Subscription List Comfirm
+			* 3.6.5.10 Heartbeat
+			* 3.6.5.11 操作码摘要
+
+		* 3.6.6 友元关系
+			* 3.6.6.1 功能概述
+			* 3.6.6.2 友元安全
+			* 3.6.6.3 友元特性
+				* 3.6.6.3.1 Friend establishment
+				* 3.6.6.3.2 Friend messaging
+				* 3.6.6.3.3 Friend management
+
+			* 3.6.6.4 低功耗特性
+				* 3.6.6.4.1 Low Power establishment
+				* 3.6.6.4.2 Low Power messaging
+				* 3.6.6.4.3 Low Power management
+
+			* 3.6.6.5 分段和重组实例
+				* 3.6.6.5.1 传入分段消息
+				* 3.6.6.5.2 输出分段消息
+
+
+		* 3.6.7 心跳
+			* 3.6.7.1 功能概述
+			* 3.6.7.2 发布心跳消息
+			* 3.6.7.3 接收心跳消息
+
+
+	* 3.7 访问层
+		* 3.7.1 字节顺序
+		* 3.7.2 模型标识符
+		* 3.7.3 访问负载
+			* 3.7.3.1 操作码
+			* 3.7.3.2 应用参数
+
+		* 3.7.4 访问层行为
+			* 3.7.4.1 发送一个访问消息
+			* 3.7.4.2 收接一个访问消息
+			* 3.7.4.3 安全注意事项
+			* 3.7.4.4 消息错误程序
+
+		* 3.7.5 非应答和应答消息
+			* 3.7.5.1 非应答消息
+			* 3.7.5.2 应答消息
+
+		* 3.7.6 订阅和发布
+			* 3.7.6.1 发布
+				* 3.7.6.1.1 状态迁移
+				* 3.7.6.1.2 状态更改发布
+				* 3.7.6.1.3 定期发布
+				* 3.7.6.1.4 发布重发
+
+			* 3.7.6.2.5 订阅
+
+		* 3.7.7 消息序列图实例
+			* 3.7.7.1 应答获取
+			* 3.7.7.2 应答设置
+			* 3.7.7.3 非应答设置
+			* 3.7.7.4 周期性发布应答
+
+
+	* 3.8 Mesh安全
+		* 3.8.1 字节顺利
+		* 3.8.2 安全工具箱
+			* 3.8.2.1 加密函数
+			* 3.8.2.2 CMAC 函数
+			* 3.8.2.3 CCM 函数
+			* 3.8.2.4 s1 SAL 生成函数
+			* 3.8.2.5 k1 推导函数
+			* 3.8.2.6 k2 网络密钥数材推导函数
+			* 3.8.2.7 k3 推导函数
+			* 3.8.2.8 k4 推导函数
+
+		* 3.8.3 序列号
+		* 3.8.4 IV Index
+		* 3.8.5 Nonce
+			* 3.8.5.1 网络 Nonce
+			* 3.8.5.2 应用 Nonce
+			* 3.8.5.3 设备 Nonce
+			* 3.8.5.4 代理 Nonce
+
+		* 3.8.6 密钥
+			* 3.8.6.1 设备密钥
+			* 3.8.6.2 应用密钥
+			* 3.8.6.3 网络密钥
+				* 3.8.6.3.1 NID,Encryption Key, and Privacy Key
+				* 3.8.6.3.2 Network ID
+				* 3.8.6.3.3 IdentityKey
+				* 3.8.6.3.4 BeaconKey
+
+			* 3.8.6.4 全局密钥索引
+
+		* 3.8.7 消息安全
+			* 3.8.7.1 上层传输认证和加密
+			* 3.8.7.2 网络层认证和加密
+			* 3.8.7.3 网络层模糊
+
+		* 3.8.8 消息重传保护
+
+	* 3.9 Mesh Beacon
+		* 3.9.1 字节顺序
+		* 3.9.2 未配置设备Beacon
+		* 3.9.3 安全网络Beacon
+			* 3.9.3.1 安全网络Beacon行为
+
+
+	* 3.10 Mesh 网络管理
+		* 3.10.1 Mesh网络创建规程
+		* 3.10.2 临时访客
+		* 3.10.3 设备UUID
+		* 3.10.4 密钥刷新规程
+			* 3.10.4.1 阶段1-新密钥的分配
+			* 3.10.4.2 阶段2-切换密钥
+			* 3.10.4.3 阶段3- 废除旧密钥
+
+		* 3.10.5 IV Update 规程
+		* 3.10.5.1 IV Update 测试模式
+		* 3.10.6 IV Index 恢复规程
+		* 3.10.7 节点消除规程
+
+	* 3.11 消息处理流
+
